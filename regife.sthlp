@@ -41,7 +41,7 @@
 {synopt :{opt f:actors(idvar timevar, dimensionint)}} id variable, time variable, and factor dimension. To save the estimates for the factor model, write {newvar}{inp:={it:factorvar}}.{p_end}
 {synopt :{opt a:bsorb}{cmd:(}{help reghdfe##absvar:absvar}[...]{cmd:)}} identifiers of the fixed effects that will be absorbed. To save the estimates for the fixed effect, write {newvar}{inp:={it:absvarvar}}.{p_end}
 {synopt:{opt vce}{cmd:(}{help reghdfe##vcetype:vcetype}[, {it:opt}]{cmd:)}}{it:vcetype}}
-is {opt un:adjusted}/{opt ols} (default), {opt r:obust}, {opt bootrap} or {opt cl:uster} {it:clustervars}. Monte carlo evidence suggests that bootstrap performs better in finite sample{p_end}
+is {opt un:adjusted}/{opt ols} (default), {opt r:obust}, {opt bootstrap} or {opt cl:uster} {it:clustervars}. Monte carlo evidence suggests that bootstrap performs better in finite sample{p_end}
 {synopt:{opt tol:erance(#)}} specifies the tolerance criterion for convergence; default is {cmd:tolerance(1e-9)}{p_end}
 {synopt:{opt max:iterations(#)}} specifies the maximum number of iterations; default is {cmd:maxiterations(5000)}. 0 corresponds to an illimited number of iterations{p_end}
 {synopt :{opt res:iduals(newvar)}} save residuals {p_end}
@@ -62,7 +62,7 @@ is {opt un:adjusted}/{opt ols} (default), {opt r:obust}, {opt bootrap} or {opt c
 
 {pstd}Factor model in id, year of dimension 1{p_end}
 {phang2}{cmd:. regife  ln_w tenure, f(id year, 1)}{p_end}
-{pstd}Model including id fixed effect, and a factor model in id, year of dimension 2{p_end}
+{pstd}Model including id fixed effect, and a factor model in id, year of dimension 1{p_end}
 {phang2}{cmd:. regife  ln_w tenure, a(id) f(id year, 1)}{p_end}
 {pstd}Model including id fixed effect, year fixed effect,  and a factor model in id, year of dimension 1{p_end}
 {phang2}{cmd:. regife  ln_w tenure, a(id year) f(id year, 1)}{p_end}
